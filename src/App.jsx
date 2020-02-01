@@ -1,9 +1,16 @@
 import React, { Fragment } from 'react';
+import { 
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import List from './List.jsx';
+import List from './List';
+import Queen from './Queen';
+
 function App() {
   return (
     <Fragment>
@@ -16,7 +23,12 @@ function App() {
         </Toolbar>
       </AppBar>
       <main>
-        <List />
+        <Router>
+          <Switch>
+            <Route exact path="/" component={List} />
+            <Route path="/:id" component={Queen} />
+          </Switch>
+        </Router>
       </main>
     </Fragment>
   );

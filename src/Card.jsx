@@ -18,6 +18,7 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
   },
   cardMedia: {
+    height: 500,
     paddingTop: '56.25%', // 16:9
   },
   cardContent: {
@@ -27,28 +28,24 @@ const useStyles = makeStyles(theme => ({
 
 export default function CardComponent(props) {
   const classes = useStyles();
-
   return (
     <Card className={classes.card}>
       <CardMedia
         className={classes.cardMedia}
-        image="https://source.unsplash.com/random"
-        title="Image title"
+        image={props.imgUrl}
+        title={props.heading}
       />
       <CardContent className={classes.cardContent}>
         <Typography gutterBottom variant="h5" component="h2">
-          Heading
+          {props.heading}
         </Typography>
         <Typography>
-          This is a media card. You can use this section to describe the content.
+          {props.description}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button onClick={props.onClick} size="small" color="primary">
           View
-        </Button>
-        <Button size="small" color="primary">
-          Edit
         </Button>
       </CardActions>
     </Card>
