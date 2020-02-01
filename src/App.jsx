@@ -3,7 +3,7 @@ import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-
+import List from './List.jsx';
 function App() {
   return (
     <Fragment>
@@ -16,7 +16,7 @@ function App() {
         </Toolbar>
       </AppBar>
       <main>
-
+        <List />
       </main>
     </Fragment>
   );
